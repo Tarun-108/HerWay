@@ -1,16 +1,12 @@
-package com.taruns.herway.navigationdrawer;
+package com.taruns.herway.navigationdrawer
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.taruns.herway.R
 
-import android.os.Bundle;
-
-import com.taruns.herway.R;
-
-public class ChangePinActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_pin);
+class ChangePinActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_change_pin)
     }
 }
