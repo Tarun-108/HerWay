@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.taruns.herway'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.taruns.herway"
@@ -30,6 +30,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding = true
+    }
+    ndkVersion '25.1.8937393'
+    buildToolsVersion '33.0.1'
 }
 
 dependencies {

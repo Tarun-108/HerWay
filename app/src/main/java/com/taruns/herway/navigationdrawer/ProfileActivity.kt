@@ -1,16 +1,12 @@
-package com.taruns.herway.navigationdrawer;
+package com.taruns.herway.navigationdrawer
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.taruns.herway.R
 
-import android.os.Bundle;
-
-import com.taruns.herway.R;
-
-public class ProfileActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+class ProfileActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_profile)
     }
 }
