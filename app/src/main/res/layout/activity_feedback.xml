@@ -67,7 +67,7 @@
 
         android:fontFamily="@font/poppins"
         android:hint="Date"
-        android:inputType="date"
+        android:inputType="time"
 
         android:padding="20dp"
         android:textColor="@color/black"
