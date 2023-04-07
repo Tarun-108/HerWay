@@ -13,21 +13,21 @@
         android:theme="@style/Theme.HerWay"
         tools:targetApi="31">
         <activity
-            android:name=".ChangePinActivity"
+            android:name=".navigationdrawer.ChangePinActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".EditContactsActivity"
+            android:name=".navigationdrawer.EditContactsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".navigationdrawer.ProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
