@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingHorizontal="32dp"
+            android:paddingHorizontal="16dp"
             android:paddingVertical="16dp">
 
             <ImageView
@@ -31,14 +31,14 @@
                 android:text="Tarun Shrivastava"
                 android:fontFamily="@font/poppins"
                 android:textSize="16sp"
-                android:padding="8dp"
+                android:padding="4dp"
                 android:textColor="@color/black"
                 android:layout_gravity="center_vertical"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:padding="4dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
 
