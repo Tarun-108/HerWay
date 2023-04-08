@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Always include this permission -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HerWay"
         tools:targetApi="31">
+        <activity
+            android:name=".authentication.SplashScreen"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".navigationdrawer.HelpActivity"
             android:exported="false">
@@ -24,7 +37,7 @@
             android:exported="false" />
         <activity
             android:name=".navigationdrawer.CommunityActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,9 +46,7 @@
         </activity>
         <activity
             android:name=".navigationdrawer.EmergencyActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".navigationdrawer.ChangePinActivity"
             android:exported="false">
