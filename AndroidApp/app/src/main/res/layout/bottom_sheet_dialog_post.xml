@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+<<<<<<< HEAD
+    android:layout_height="wrap_content"
+    android:layout_margin="24dp"
+    android:background="@color/white"
+=======
     android:layout_margin="1dp"
     android:layout_height="360dp"
     android:elevation="23dp"
@@ -9,6 +14,7 @@
     app:strokeWidth="1dp"
 
     app:cardCornerRadius="23dp"
+>>>>>>> 7a2d20a74cb530c779732ac3d4a467ebbfd3148c
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 

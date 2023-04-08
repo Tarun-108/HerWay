@@ -1,5 +1,6 @@
 package com.taruns.herway
 
+import android.content.Intent
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +12,7 @@ import com.taruns.herway.bottomNav.ContactFragment
 import com.taruns.herway.bottomNav.NavigationFragment
 import com.taruns.herway.bottomNav.SOSFragment
 import com.taruns.herway.databinding.ActivityMainBinding
+import com.taruns.herway.navigationdrawer.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,22 +47,28 @@ class MainActivity : AppCompatActivity() {
             navView.setNavigationItemSelectedListener {
                 when (it.itemId) {
                     R.id.emergency_contacts -> {
-                        Toast.makeText(this@MainActivity, "First Item Clicked", Toast.LENGTH_SHORT).show()
+                        val intent: Intent = Intent(this@MainActivity, EmergencyActivity::class.java)
+                        startActivity(intent)
                     }
                     R.id.change_pin -> {
-                        Toast.makeText(this@MainActivity, "Second Item Clicked", Toast.LENGTH_SHORT).show()
+                        val intent: Intent = Intent(this@MainActivity, ChangePinActivity::class.java)
+                        startActivity(intent)
                     }
                     R.id.community -> {
-                        Toast.makeText(this@MainActivity, "third Item Clicked", Toast.LENGTH_SHORT).show()
+                        val intent: Intent = Intent(this@MainActivity, CommunityActivity::class.java)
+                        startActivity(intent)
                     }
                     R.id.feedback -> {
-                        Toast.makeText(this@MainActivity, "fourth Item Clicked", Toast.LENGTH_SHORT).show()
+                        val intent: Intent = Intent(this@MainActivity, FeedbackActivity::class.java)
+                        startActivity(intent)
                     }
                     R.id.help -> {
-                        Toast.makeText(this@MainActivity, "fifth Item Clicked", Toast.LENGTH_SHORT).show()
+                        val intent: Intent = Intent(this@MainActivity, HelpActivity::class.java)
+                        startActivity(intent)
                     }
                     R.id.logout -> {
-                        Toast.makeText(this@MainActivity, "sixth Item Clicked", Toast.LENGTH_SHORT).show()
+//                        val intent: Intent = Intent(this@MainActivity, EmergencyActivity::class.java)
+//                        startActivity(intent)
                     }
                 }
                 true

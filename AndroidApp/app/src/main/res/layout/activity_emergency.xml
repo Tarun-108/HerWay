@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".navigationdrawer.EmergencyActivity">
 
     <ImageView
@@ -30,7 +31,7 @@
         android:layout_height="wrap_content"
         android:gravity="left"
         android:layout_marginLeft="24dp"
-
+        android:textColor="@color/text_color_light"
         android:textSize="15sp"
         android:text="These contacts will be alerted if you need to activate SOS"
         />
@@ -54,6 +55,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="3dp"
+        tools:listitem="@layout/single_row_emergency_contacts"
         />
 
 

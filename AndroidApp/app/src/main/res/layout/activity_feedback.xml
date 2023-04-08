@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/white"
     tools:context=".navigationdrawer.FeedbackActivity">
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -32,16 +33,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-
-
+        android:textColor="@color/text_color_light"
         android:textSize="15sp"
-        android:text="Help us get better for helping other women, provide us with details so that we can make the world even more safe for women We respect privacy, your data is safe with us and we do not share your data with anyone neither do we look into it."
+        android:text="Help us get better for helping other women, provide us with details so that we can make the world even more safe for women\nWe respect privacy, your data is safe with us and we do not share your data with anyone neither do we look into it."
         />
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
+        android:textColor="@color/text_color"
         android:tooltipText="Pick a category"/>
     <EditText
         android:id="@+id/location"
@@ -53,10 +54,11 @@
         android:fontFamily="@font/poppins"
         android:hint="Location"
         android:inputType="text"
-
         android:padding="20dp"
+        android:textColorHint="@color/text_color_light"
         android:textColor="@color/black"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:backgroundTint="@color/color_secondary"/>
     <EditText
         android:id="@+id/date"
         android:layout_width="wrap_content"
@@ -64,14 +66,19 @@
         android:layout_gravity="left"
         android:layout_marginTop="6dp"
         android:ems="13"
-
         android:fontFamily="@font/poppins"
         android:hint="Date"
+<<<<<<< HEAD
+        android:inputType="date"
+        android:textColorHint="@color/text_color_light"
+=======
         android:inputType="time"
 
+>>>>>>> 7a2d20a74cb530c779732ac3d4a467ebbfd3148c
         android:padding="20dp"
         android:textColor="@color/black"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:backgroundTint="@color/color_secondary"/>
     <EditText
         android:id="@+id/time"
         android:layout_width="wrap_content"
@@ -79,14 +86,15 @@
         android:layout_gravity="left"
         android:layout_marginTop="6dp"
         android:ems="13"
-
         android:fontFamily="@font/poppins"
         android:hint="Time"
         android:inputType="time"
-
+        android:textColorHint="@color/text_color_light"
         android:padding="20dp"
         android:textColor="@color/black"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:backgroundTint="@color/color_secondary"/>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/otp_next"
         android:layout_width="wrap_content"
