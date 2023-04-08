@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".navigationdrawer.FeedbackActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/change_pin_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_ios_24" />
+    <TextView
+        android:fontFamily="@font/poppins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+
+        android:layout_marginTop="24dp"
+        android:textSize="22sp"
+        android:text="Feedback"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <TextView
+        android:fontFamily="@font/poppins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textColor="@color/text_color_light"
+        android:textSize="15sp"
+        android:text="Help us get better for helping other women, provide us with details so that we can make the world even more safe for women\nWe respect privacy, your data is safe with us and we do not share your data with anyone neither do we look into it."
+        />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:textColor="@color/text_color"
+        android:tooltipText="Pick a category"/>
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="63dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="46dp"
+        android:ems="13"
+        android:fontFamily="@font/poppins"
+        android:hint="Location"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColorHint="@color/text_color_light"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:backgroundTint="@color/color_secondary"/>
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="63dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="6dp"
+        android:ems="13"
+        android:fontFamily="@font/poppins"
+        android:hint="Date"
+<<<<<<< HEAD
+        android:inputType="date"
+        android:textColorHint="@color/text_color_light"
+=======
+        android:inputType="time"
+
+>>>>>>> 7a2d20a74cb530c779732ac3d4a467ebbfd3148c
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:backgroundTint="@color/color_secondary"/>
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="63dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="6dp"
+        android:ems="13"
+        android:fontFamily="@font/poppins"
+        android:hint="Time"
+        android:inputType="time"
+        android:textColorHint="@color/text_color_light"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:backgroundTint="@color/color_secondary"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+
+        android:padding="4dp"
+        android:background="@drawable/btn_chk"
+        android:fontFamily="@font/poppins"
+        android:text="    submit    "
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HerWay</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiYW51YXZuIiwiYSI6ImNsZzVmYTVzODAyd2czZWxpcTRrYjJnMWMifQ.shakhcdvv9I_gB9Nl5EI6Q</string>
+
+</resources>
