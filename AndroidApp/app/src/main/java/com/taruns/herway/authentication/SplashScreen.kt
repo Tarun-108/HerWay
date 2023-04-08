@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.taruns.herway.R
 import com.taruns.herway.authentication.login.loginActivity
 
+
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
