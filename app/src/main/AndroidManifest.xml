@@ -18,16 +18,16 @@
         <activity
             android:name=".navigationdrawer.CommunityActivity"
             android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".navigationdrawer.EmergencyActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".navigationdrawer.EmergencyActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".navigationdrawer.ChangePinActivity"
