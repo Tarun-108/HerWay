@@ -1,6 +1,7 @@
 package com.taruns.herway.navigationdrawer
 
 import android.app.Application
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
+import com.taruns.herway.MainActivity
 import com.taruns.herway.databinding.ActivityFeedbackBinding
 import com.taruns.herway.models.feedBack_model
 
@@ -22,6 +24,10 @@ class FeedbackActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         val view = binding.root
         setContentView(view)
         setSpinner()
+        binding.changePinBack.setOnClickListener {
+            var intent= Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setSpinner() {

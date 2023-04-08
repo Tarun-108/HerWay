@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-<<<<<<< HEAD
-    android:background="@color/white">
-=======
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="23dp"
     app:strokeColor="@color/black"
     app:strokeWidth="1dp">
->>>>>>> 7a2d20a74cb530c779732ac3d4a467ebbfd3148c
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="74dp"

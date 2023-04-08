@@ -1,5 +1,6 @@
 package com.taruns.herway.navigationdrawer
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -14,6 +15,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.getValue
+import com.taruns.herway.MainActivity
 import com.taruns.herway.R
 import com.taruns.herway.adapter.community_post_adapter
 import com.taruns.herway.databinding.ActivityCommunityBinding
@@ -34,6 +36,10 @@ class CommunityActivity : AppCompatActivity() {
 
         binding.openBtmNav.setOnClickListener {
             ShowBottomSheetDialog()
+        }
+        binding.changePinBack.setOnClickListener {
+            var intent= Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
         setRecyclerView()
     }

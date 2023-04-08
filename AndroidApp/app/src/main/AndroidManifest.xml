@@ -23,13 +23,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
 
-            android:name=".navigationdrawer.FeedbackActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity
@@ -66,11 +60,24 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".authentication.SplashScreen"
-            android:exported="false">
+            android:name=".authentication.login.loginActivity"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
+        </activity>
+        <activity
+            android:name=".authentication.SplashScreen"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".navigationdrawer.HelpActivity"
@@ -82,15 +89,7 @@
         <activity
             android:name=".navigationdrawer.FeedbackActivity"
             android:exported="false" />
-        <activity
-            android:name=".navigationdrawer.CommunityActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".navigationdrawer.EmergencyActivity"
             android:exported="true" />

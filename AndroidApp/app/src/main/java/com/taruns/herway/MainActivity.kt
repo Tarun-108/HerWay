@@ -12,19 +12,25 @@ import com.taruns.herway.bottomNav.ContactFragment
 import com.taruns.herway.bottomNav.NavigationFragment
 import com.taruns.herway.bottomNav.SOSFragment
 import com.taruns.herway.databinding.ActivityMainBinding
+import com.taruns.herway.databinding.NavDrawerHeaderBinding
 import com.taruns.herway.navigationdrawer.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var binding_header: NavDrawerHeaderBinding
     lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        binding_header = NavDrawerHeaderBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding_header.profile.setOnClickListener{
+            val intent: Intent = Intent(this@MainActivity, ProfileActivity::class.java)
+            startActivity(intent)
+        }
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.call->setCurrentFragment(ContactFragment())
@@ -46,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
             navView.setNavigationItemSelectedListener {
                 when (it.itemId) {
+
                     R.id.emergency_contacts -> {
                         val intent: Intent = Intent(this@MainActivity, EmergencyActivity::class.java)
                         startActivity(intent)
