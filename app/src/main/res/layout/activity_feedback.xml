@@ -88,7 +88,7 @@
         android:textColor="@color/black"
         android:textSize="12sp" />
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/otp_next"
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
