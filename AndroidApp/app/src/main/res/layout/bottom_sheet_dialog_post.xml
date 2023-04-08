@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-<<<<<<< HEAD
-    android:layout_height="wrap_content"
-    android:layout_margin="24dp"
-    android:background="@color/white"
-=======
     android:layout_margin="1dp"
+    android:backgroundTint="@color/black"
     android:layout_height="360dp"
-    android:elevation="23dp"
-
-    app:strokeColor="@color/black"
-    app:strokeWidth="1dp"
-
-    app:cardCornerRadius="23dp"
->>>>>>> 7a2d20a74cb530c779732ac3d4a467ebbfd3148c
     xmlns:app="http://schemas.android.com/apk/res-auto">
+<com.google.android.material.card.MaterialCardView
+    app:strokeColor="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="360dp"
+
+    app:strokeWidth="1dp"
+    android:elevation="23dp"
+    android:alpha="0.9"
+    app:cardCornerRadius="23dp">
+
 
 
         <LinearLayout
@@ -23,6 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
+                android:id="@+id/com_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
@@ -33,6 +33,7 @@
                 android:hint="Title"
                 />
             <EditText
+                android:id="@+id/com_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
@@ -50,7 +51,7 @@
             android:layout_marginBottom="13dp"
             android:orientation="horizontal">
 
-            <TextView
+          <!--  <TextView
                 android:id="@+id/com_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -65,7 +66,46 @@
                 android:textStyle="bold"
                 android:textColor="#0AC382"
                 android:text="Post"/>
+                -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/com_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="24dp"
+                android:padding="3dp"
+                android:background="@drawable/btn_chk"
+                android:fontFamily="@font/poppins"
+                android:text="    Cancel    "
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/com_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="24dp"
+                android:padding="1dp"
+                android:background="@drawable/btn_chk"
+                android:fontFamily="@font/poppins"
+                android:text=" Post "
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
         </LinearLayout>
 
-
 </com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>

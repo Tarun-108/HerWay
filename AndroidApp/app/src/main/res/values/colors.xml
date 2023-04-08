@@ -16,4 +16,8 @@
     <color name="text_color">#FF000000</color>
     <color name="text_color_light">#FFADACAC</color>
 
+    <color name="button_color">#FF050914</color>
+    <color name="button_color_inactive">#4D4E53</color>
+
+
 </resources>
