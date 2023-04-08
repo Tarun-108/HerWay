@@ -1,12 +1,12 @@
 package com.taruns.herway.models
 
 data class UserModel(
-    var name: String,
-    var age: Int,
-    var phone: String,
-    var email: String,
-    var pin: Int,
-    var eContacts: Array<ContactModel>
+    var name: String?,
+    var age: Int?,
+    var phone: String?,
+    var email: String?,
+    var pin: Int?,
+    var eContacts: Array<ContactModel>?
 ) {
 
     override fun equals(other: Any?): Boolean {
@@ -27,10 +27,10 @@ data class UserModel(
 
     override fun hashCode(): Int {
         var result = name.hashCode()
-        result = 31 * result + age
+        result = 31 * result + age!!
         result = 31 * result + phone.hashCode()
         result = 31 * result + email.hashCode()
-        result = 31 * result + pin
+        result = 31 * result + pin!!
         result = 31 * result + eContacts.contentHashCode()
         return result
     }
