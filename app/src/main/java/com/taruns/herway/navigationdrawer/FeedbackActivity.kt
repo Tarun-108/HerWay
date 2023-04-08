@@ -44,13 +44,24 @@ class FeedbackActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
     }
 
     private fun check_validation(): Boolean {
-        var xx=false;
+        var xx=true;
         xx=xx&&(binding.location.toString().trim().length>0)
-        if(!xx)binding.location.requestFocus()
+        if(!xx) {
+            binding.location.setError("Check Location")
+            binding.location.requestFocus()
+        }
         xx=xx&&(binding.date.toString().trim().length==10)
-        if(!xx)binding.location.requestFocus()
+        if(!xx) {
+
+            binding.date.setError("Enter Proper Time")
+            binding.date.requestFocus()
+        }
         xx=xx&&(binding.time.toString().trim().length>0)
-        if(!xx)binding.location.requestFocus()
+        if(!xx) {
+
+            binding.time.setError("Enter Proper Time")
+            binding.time.requestFocus()
+        }
         return xx
 
     }
