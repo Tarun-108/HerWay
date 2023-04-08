@@ -1,8 +1,10 @@
 package com.taruns.herway.navigationdrawer
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.taruns.herway.MainActivity
 import com.taruns.herway.R
 import com.taruns.herway.databinding.ActivityChangePinBinding
 import com.taruns.herway.databinding.ActivityFeedbackBinding
@@ -22,6 +24,10 @@ class ChangePinActivity : AppCompatActivity() {
 
                 //update it to database
             }
+        }
+        binding.changePinBack.setOnClickListener {
+            var intent= Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
     private fun check_validation(): Boolean {
