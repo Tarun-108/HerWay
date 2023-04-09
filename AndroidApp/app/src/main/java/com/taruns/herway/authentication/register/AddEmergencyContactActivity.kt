@@ -39,12 +39,12 @@ class AddEmergencyContactActivity : AppCompatActivity() {
             contact.phone = binding.number.text.toString()
             userModel.eContacts?.add(contact)
             Log.d("Tagggg", contact.phone.toString())
-            Log.d("Tagggg", userModel.phone.toString())
+            Log.d("Tagggg", userModel.toString())
             userModel.phone?.let { it1 ->
                 database.child("Users").child(it1).setValue(userModel)
             }
             val intent =  Intent(this@AddEmergencyContactActivity, MainActivity::class.java)
-            Toast.makeText(this@AddEmergencyContactActivity, "Profile Created", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@AddEmergencyContactActivity, "Contact Added", Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }
 

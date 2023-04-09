@@ -1,18 +1,22 @@
 package com.taruns.herway
 
 import android.content.Intent
-import android.content.res.Resources
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.taruns.herway.bottomNav.ContactFragment
 import com.taruns.herway.bottomNav.NavigationFragment
 import com.taruns.herway.bottomNav.SOSFragment
 import com.taruns.herway.databinding.ActivityMainBinding
 import com.taruns.herway.databinding.NavDrawerHeaderBinding
+import com.taruns.herway.models.UserModel
 import com.taruns.herway.navigationdrawer.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,19 +24,25 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var binding_header: NavDrawerHeaderBinding
     lateinit var toggle: ActionBarDrawerToggle
-
-
+    val phone_user="+917441147546"
+     var userDataModel:UserModel?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         binding_header = NavDrawerHeaderBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    userDataModel= intent.getSerializableExtra("userModel") as UserModel?
+       // Log.i("tagfff",userDataModel.toString())
+        //getUserdata()
 
-        binding_header.profile.setOnClickListener{
-            val intent: Intent = Intent(this@MainActivity, ProfileActivity::class.java)
-            startActivity(intent)
-        }
+        val bundle = Bundle()
+        bundle.putSerializable("userDataModel", userDataModel)
+// set Fragmentclass Arguments
+// set Fragmentclass Arguments
+        val fragobj = SOSFragment()
+        fragobj.setArguments(bundle)
+
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.call->setCurrentFragment(ContactFragment())
@@ -42,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
 
 
         binding.apply {
@@ -57,10 +68,12 @@ class MainActivity : AppCompatActivity() {
 
                     R.id.emergency_contacts -> {
                         val intent: Intent = Intent(this@MainActivity, EmergencyActivity::class.java)
+                        intent.putExtra("userModel", userDataModel)
                         startActivity(intent)
                     }
                     R.id.change_pin -> {
                         val intent: Intent = Intent(this@MainActivity, ChangePinActivity::class.java)
+                        intent.putExtra("userModel", userDataModel)
                         startActivity(intent)
                     }
                     R.id.community -> {
@@ -76,8 +89,9 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                     R.id.logout -> {
-//                        val intent: Intent = Intent(this@MainActivity, EmergencyActivity::class.java)
-//                        startActivity(intent)
+                       val intent: Intent = Intent(this@MainActivity, ProfileActivity::class.java)
+                        intent.putExtra("userModel", userDataModel)
+                        startActivity(intent)
                     }
                 }
                 true
@@ -85,6 +99,24 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun getUserdata() {
+        var reference =
+            FirebaseDatabase.getInstance().getReference("Users").child(phone_user)
+        reference.addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                Log.i("checkk",snapshot.toString())
+                userDataModel=snapshot.getValue(UserModel::class.java)!!
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.i("check","cancelled")
+            }
+
+        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

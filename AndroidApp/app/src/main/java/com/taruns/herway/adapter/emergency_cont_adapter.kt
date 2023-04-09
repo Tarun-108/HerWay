@@ -7,11 +7,12 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.taruns.herway.R
+import com.taruns.herway.models.ContactModel
 import com.taruns.herway.models.contact_list_model
 
 class emergency_cont_adapter: RecyclerView.Adapter<emergency_cont_adapter.ViewHolder>() {
 
-    var contact_list = mutableListOf<contact_list_model>()
+    var contact_list = mutableListOf<ContactModel>()
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name = itemView.findViewById<TextView>(R.id.name_cont_list)
         val phone = itemView.findViewById<TextView>(R.id.phone_cont_list)
