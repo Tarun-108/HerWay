@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     userDataModel= intent.getSerializableExtra("userModel") as UserModel?
        // Log.i("tagfff",userDataModel.toString())
         //getUserdata()
-
+    binding_header.name.text=userDataModel?.name
         val bundle = Bundle()
         bundle.putSerializable("userDataModel", userDataModel)
 // set Fragmentclass Arguments

@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.taruns.herway.MainActivity
 import com.taruns.herway.R
 import com.taruns.herway.adapter.emergency_cont_adapter
@@ -20,6 +24,7 @@ class EmergencyActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEmergencyBinding
      var  userDataModel: UserModel?=null
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
         binding = ActivityEmergencyBinding.inflate(layoutInflater)
@@ -38,8 +43,14 @@ class EmergencyActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+    }
+
+    override fun onResume() {
+        super.onResume()
         setRecyclerView()
     }
+
 
     private fun setRecyclerView() {
         val layoutManager = LinearLayoutManager(this)
@@ -48,14 +59,38 @@ class EmergencyActivity : AppCompatActivity() {
 
 
 
-        var cont_list=userDataModel?.eContacts as MutableList<ContactModel>?
+
       //  for(i in 0..34)
         //cont_list.add(i,contactListModel)
 
+        var reference =
+            userDataModel?.phone?.let {
+                FirebaseDatabase.getInstance().getReference("Users").child(
+                    it
+                )
+            }
+        reference?.addValueEventListener(object : ValueEventListener {
 
-        var adapter = emergency_cont_adapter()
-        adapter.contact_list=cont_list!!
-        binding.contactRecv.adapter = adapter
+            override fun onDataChange(snapshot: DataSnapshot) {
+                Log.i("checkk",snapshot.toString())
+                userDataModel=snapshot.getValue(UserModel::class.java)!!
+                var cont_list=userDataModel?.eContacts as MutableList<ContactModel>?
+                Log.i("cont_list",cont_list.toString())
+                var adapter = emergency_cont_adapter()
+                if(cont_list!=null) {
+                    adapter.contact_list = cont_list
+                    binding.contactRecv.adapter = adapter
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.i("check","cancelled")
+            }
+
+        })
+
+
 
     }
 }

@@ -18,7 +18,7 @@ class CreatePinActivity : AppCompatActivity() {
         binding = ActivityCreatePinBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val userModel: UserModel = intent.getSerializableExtra("userModel") as UserModel
+        val userModel: UserModel? = intent.getSerializableExtra("userModel") as UserModel?
 
         binding.nextButton.setOnClickListener{
             var text1 = binding.editTextPassword.text.toString().trim()
@@ -32,7 +32,7 @@ class CreatePinActivity : AppCompatActivity() {
             }
             else{
                 val intent =  Intent(this@CreatePinActivity, AddEmergencyContactActivity::class.java)
-                userModel.pin = text1
+                userModel?.pin = text1
                 intent.putExtra("userModel", userModel)
                 Toast.makeText(this@CreatePinActivity, "Pin Created", Toast.LENGTH_SHORT).show()
                 startActivity(intent)

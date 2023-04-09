@@ -35,6 +35,7 @@ class ProfileActivity : AppCompatActivity() {
                 reference.child("Users").child(userDataModel?.phone!!).setValue(userDataModel)
                 Toast.makeText(applicationContext, "Updated", Toast.LENGTH_LONG).show()
                 var intent= Intent(this, MainActivity::class.java)
+                intent.putExtra("userModel",userDataModel)
                 startActivity(intent)
             }
         }
