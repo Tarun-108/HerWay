@@ -26,6 +26,7 @@
             android:layout_marginTop="3dp"
             android:src="@drawable/maleuser" />
         <TextView
+            android:id="@+id/phone_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+91 123-456-7890"
@@ -54,7 +55,7 @@
             android:ems="13"
             android:fontFamily="@font/poppins"
             android:hint="Enter Name."
-            android:inputType="phone"
+            android:inputType="textPersonName"
 
             android:padding="17dp"
             android:textColor="@color/black"

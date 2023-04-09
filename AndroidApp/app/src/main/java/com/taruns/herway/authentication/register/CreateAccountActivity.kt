@@ -11,10 +11,12 @@ import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.taruns.herway.authentication.login.loginActivity
 import com.taruns.herway.databinding.ActivityCreateAccountBinding
 import com.taruns.herway.databinding.FragmentOTPBinding
 import com.taruns.herway.models.ContactModel
 import com.taruns.herway.models.UserModel
+import com.taruns.herway.navigationdrawer.EmergencyActivity
 import java.util.concurrent.TimeUnit
 
 class CreateAccountActivity : AppCompatActivity() {
@@ -95,6 +97,11 @@ class CreateAccountActivity : AppCompatActivity() {
             userModel.phone?.let { it1 -> resendVerificationCode(it1, resendToken) }
         }
 
+        binding.toLogin.setOnClickListener {
+            val intent: Intent = Intent(this@CreateAccountActivity, loginActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun onStart() {
@@ -105,6 +112,7 @@ class CreateAccountActivity : AppCompatActivity() {
         updateUI(currentUser, userModel)
 
         binding.sendOtp.setOnClickListener{
+
             userModel = createUser()
             userModel.phone?.let { it1 -> startPhoneNumberVerification(it1) }
         }
@@ -155,7 +163,7 @@ class CreateAccountActivity : AppCompatActivity() {
                     val user = task.result?.user
                     val intent =  Intent(this@CreateAccountActivity, CreatePinActivity::class.java)
                     intent.putExtra("userModel", userModel)
-                    Toast.makeText(this@CreateAccountActivity, "Login Success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@CreateAccountActivity, "Registeration Success", Toast.LENGTH_SHORT).show()
                     startActivity(intent)
                 } else {
                     // Sign in failed, display a message and update the UI

@@ -30,21 +30,22 @@ class AddEmergencyContactActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         database = Firebase.database.reference
-        val userModel: UserModel = intent.getSerializableExtra("userModel") as UserModel
+        val userModel: UserModel? = intent.getSerializableExtra("userModel") as UserModel?
 
         binding.finishSetup.setOnClickListener{
             val contact: ContactModel = ContactModel("","","")
             contact.name = binding.name.text.toString()
             contact.email = binding.email.text.toString()
             contact.phone = binding.number.text.toString()
-            userModel.eContacts?.add(contact)
-            Log.d("Tagggg", contact.phone.toString())
-            Log.d("Tagggg", userModel.phone.toString())
-            userModel.phone?.let { it1 ->
+            userModel?.eContacts?.add(contact)
+           // Log.d("Tagggg", contact.phone.toString())
+            Log.d("Tagggg", userModel.toString())
+            userModel?.phone?.let { it1 ->
                 database.child("Users").child(it1).setValue(userModel)
             }
             val intent =  Intent(this@AddEmergencyContactActivity, MainActivity::class.java)
-            Toast.makeText(this@AddEmergencyContactActivity, "Profile Created", Toast.LENGTH_SHORT).show()
+            intent.putExtra("userModel",userModel)
+            Toast.makeText(this@AddEmergencyContactActivity, "Contact Added", Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }
 
