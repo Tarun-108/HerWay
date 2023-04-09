@@ -19,7 +19,7 @@ class HelpActivity : AppCompatActivity() {
 
         binding.contactUs.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_EMAIL, "email")
+            intent.putExtra(Intent.EXTRA_EMAIL, "tarun@gmail.com")
             intent.putExtra(Intent.EXTRA_SUBJECT, "subject")
             intent.putExtra(Intent.EXTRA_TEXT, "message")
             intent.type = "message/rfc822"

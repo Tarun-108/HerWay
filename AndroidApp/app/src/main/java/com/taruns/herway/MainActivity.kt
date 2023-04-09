@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -45,9 +46,18 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.call->setCurrentFragment(ContactFragment())
-                R.id.navigation->setCurrentFragment(NavigationFragment())
-                R.id.sos->setCurrentFragment(SOSFragment())
+                R.id.call->{
+                    binding.cardView.visibility=View.GONE
+                    setCurrentFragment(ContactFragment())
+                }
+                R.id.navigation-> {
+                    binding.cardView.visibility=View.VISIBLE
+                    setCurrentFragment(NavigationFragment())
+                }
+                R.id.sos->{
+                    binding.cardView.visibility=View.GONE
+                    setCurrentFragment(fragobj)
+                }
 
             }
             true

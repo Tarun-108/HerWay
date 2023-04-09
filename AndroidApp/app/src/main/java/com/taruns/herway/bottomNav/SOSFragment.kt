@@ -1,6 +1,7 @@
 package com.taruns.herway.bottomNav
 
 import android.os.Bundle
+import android.util.Log
 import com.taruns.herway.bottomNav.SOSFragment
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +24,7 @@ class SOSFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var mParam1: String? = null
     private var mParam2: String? = null
-    lateinit var userDataModel:UserModel
+     var userDataModel:UserModel?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,10 +37,13 @@ class SOSFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSosBinding.inflate(inflater, container, false)
-        return binding!!.root
-        userDataModel= arguments?.getSerializable("userDataModel") as UserModel
+
+        userDataModel= arguments?.getSerializable("userDataModel") as UserModel?
+        Log.i("check",userDataModel.toString())
 
         SetRecv()
+        return binding!!.root
+
     }
 
     private fun SetRecv() {
@@ -49,7 +53,7 @@ class SOSFragment : Fragment() {
 
 
 
-        var cont_list=userDataModel.eContacts as MutableList<ContactModel>
+        var cont_list=userDataModel?.eContacts as MutableList<ContactModel>
         //  for(i in 0..34)
         //cont_list.add(i,contactListModel)
 
