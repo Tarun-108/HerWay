@@ -1,57 +1,77 @@
 package com.taruns.herway.bottomNav
 
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
-import com.taruns.herway.bottomNav.NavigationFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.taruns.herway.R
-
+import com.google.android.gms.maps.model.JointType
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.PolylineOptions
+import com.mapbox.maps.Style
+import com.taruns.herway.data.APIClient
+import com.taruns.herway.data.APIInterface
+import com.taruns.herway.databinding.FragmentNavigationBinding
+import com.taruns.herway.models.RequestBody
+import com.taruns.herway.models.ResponseJson
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class NavigationFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var mParam1: String? = null
-    private var mParam2: String? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        if (arguments != null) {
-            mParam1 = requireArguments().getString(ARG_PARAM1)
-            mParam2 = requireArguments().getString(ARG_PARAM2)
-        }
-    }
+
+    var apiInterface: APIInterface? = null
+    private lateinit var binding: FragmentNavigationBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation, container, false)
+        binding = FragmentNavigationBinding.inflate(inflater, container, false)
+        apiInterface = APIClient.client?.create(APIInterface::class.java)
+
+        val requestBody: RequestBody = RequestBody("delhi airport","connaught place")
+
+        apiInterface?.getResponse(requestBody)?.enqueue(object : Callback<ResponseJson?> {
+            override fun onResponse(call: Call<ResponseJson?>?, response: Response<ResponseJson?>) {
+                val response: ResponseJson? = response.body()
+
+                Toast.makeText( activity,
+                    response.toString(), Toast.LENGTH_SHORT).show()
+
+            }
+
+            override fun onFailure(call: Call<ResponseJson?>, t: Throwable?) {
+                call.cancel()
+            }
+        })
+
+
+//        Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
+
+        val polylineOptions: PolylineOptions = PolylineOptions()
+            .add(LatLng(40.7143528, -74.0059731))
+            .add(LatLng(37.7749295, -122.4194155))
+            .add(LatLng(51.5073509, -0.1277583))
+
+        polylineOptions.color(Color.parseColor("#3bb2d0"));
+        polylineOptions.width(5F);
+        polylineOptions.jointType(JointType.ROUND);
+
+
+        binding.mapView.getMapboxMap().loadStyleUri(Style.MAPBOX_STREETS)
+
+//        binding.webView.loadUrl("http://www.tutorialspoint.com");
+
+        return binding.root
     }
 
     companion object {
-        // TODO: Rename parameter arguments, choose names that match
-        // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-        private const val ARG_PARAM1 = "param1"
-        private const val ARG_PARAM2 = "param2"
 
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment NavigationFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        fun newInstance(param1: String?, param2: String?): NavigationFragment {
-            val fragment = NavigationFragment()
-            val args = Bundle()
-            args.putString(ARG_PARAM1, param1)
-            args.putString(ARG_PARAM2, param2)
-            fragment.arguments = args
-            return fragment
-        }
     }
 }

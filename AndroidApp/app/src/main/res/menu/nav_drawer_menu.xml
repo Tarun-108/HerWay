@@ -4,6 +4,9 @@
         android:id="@+id/emergency_contacts"
         android:title="Emergency Contact" />
     <item
+        android:id="@+id/trigger"
+        android:title="Trigger" />
+    <item
         android:id="@+id/change_pin"
         android:title="Change Pin" />
     <item

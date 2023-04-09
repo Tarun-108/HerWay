@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" /> <!-- Always include this permission -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Include only if your app benefits from precise location access. -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -17,20 +18,35 @@
         android:theme="@style/Theme.HerWay"
         tools:targetApi="31">
         <activity
-            android:name=".authentication.register.CreateAccountActivity"
+            android:name=".navigationdrawer.TriggerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".bottomNav.FetchARouteActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".navigationdrawer.CommunityActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".authentication.register.AddEmergencyContactActivity"
             android:exported="false">
@@ -53,7 +69,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".authentication.register.CreateAccountActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -61,15 +77,10 @@
         </activity>
         <activity
             android:name=".authentication.SplashScreen"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".navigationdrawer.HelpActivity"
@@ -81,7 +92,6 @@
         <activity
             android:name=".navigationdrawer.FeedbackActivity"
             android:exported="false" />
-
         <activity
             android:name=".navigationdrawer.EmergencyActivity"
             android:exported="true" />
@@ -101,13 +111,6 @@
         </activity>
         <activity
             android:name=".navigationdrawer.ProfileActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".authentication.login.loginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

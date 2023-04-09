@@ -9,3 +9,5 @@ We propose to design an AI-powered tool that uses machine learning algorithms to
 * A community feature where women can connect with other women in their area. The community feature will allow women to share their experiences, tips, and advice with each other, providing a sense of safety and support.
 ## UI/UX of the app-
 https://www.figma.com/file/pEJBhMQdMzu67Onk6GxtoS/HerWay?node-id=9%3A101&t=VuxjsY7hK5nIT5bI-1
+## Presentation-
+https://docs.google.com/presentation/d/1vji9eA_ce64PTYZ732wi_JdgIHtISLZFhkd-apqrAQs/edit?usp=sharing

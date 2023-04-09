@@ -81,6 +81,10 @@ class MainActivity : AppCompatActivity() {
                         intent.putExtra("userModel", userDataModel)
                         startActivity(intent)
                     }
+                    R.id.trigger -> {
+                        val intent: Intent = Intent(this@MainActivity, TriggerActivity::class.java)
+                        startActivity(intent)
+                    }
                     R.id.change_pin -> {
                         val intent: Intent = Intent(this@MainActivity, ChangePinActivity::class.java)
                         intent.putExtra("userModel", userDataModel)
