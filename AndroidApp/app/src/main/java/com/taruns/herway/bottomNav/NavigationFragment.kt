@@ -1,57 +1,41 @@
 package com.taruns.herway.bottomNav
 
 import android.os.Bundle
-import com.taruns.herway.bottomNav.NavigationFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.taruns.herway.R
-
+import com.taruns.herway.databinding.FragmentNavigationBinding
 
 
 class NavigationFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var mParam1: String? = null
-    private var mParam2: String? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        if (arguments != null) {
-            mParam1 = requireArguments().getString(ARG_PARAM1)
-            mParam2 = requireArguments().getString(ARG_PARAM2)
-        }
-    }
+
+    private lateinit var binding: FragmentNavigationBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation, container, false)
+        binding = FragmentNavigationBinding.inflate(inflater, container, false)
+
+//        var waypoints = route.getGeometry().getWaypoints();
+//        Array<LatLng>() points = Array(waypoints.size);
+//        for (int i = 0; i < waypoints.size(); i++) {
+//            points[i] = new LatLng(
+//                    waypoints.get(i).getLatitude(),
+//            waypoints.get(i).getLongitude());
+//        }
+
+// Draw Points on MapView
+//        binding.mapView.addPolyline(new PolylineOptions()
+//            .add(points)
+//            .color(Color.parseColor(“#3887be”))
+//        .width(5));
+        return binding.root
     }
 
     companion object {
-        // TODO: Rename parameter arguments, choose names that match
-        // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-        private const val ARG_PARAM1 = "param1"
-        private const val ARG_PARAM2 = "param2"
 
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment NavigationFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        fun newInstance(param1: String?, param2: String?): NavigationFragment {
-            val fragment = NavigationFragment()
-            val args = Bundle()
-            args.putString(ARG_PARAM1, param1)
-            args.putString(ARG_PARAM2, param2)
-            fragment.arguments = args
-            return fragment
-        }
     }
 }
