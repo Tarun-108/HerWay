@@ -25,7 +25,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".bottomNav.LocationTrackingActivity"
+            android:name=".bottomNav.FetchARouteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
