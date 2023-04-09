@@ -4,6 +4,7 @@
     <string name="close">Close</string>
     <string name="mapbox_access_token">pk.eyJ1IjoiYW51YXZuIiwiYSI6ImNsZzVmYTVzODAyd2czZWxpcTRrYjJnMWMifQ.shakhcdvv9I_gB9Nl5EI6Q</string>
     <string-array name="keywords">
+        <item>HerWay Help</item>
         <item>Alexa</item>
         <item>Americano</item>
         <item>Blueberry</item>

@@ -21,7 +21,7 @@ import java.util.*
 class TriggerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTriggerBinding
-    private val ACCESS_KEY = "ukV5ksfxAGyW09zb2WrDY7sCHv4a90Gp0hZZy7VQtjI/NFys7xE+1w=="
+    private val ACCESS_KEY = "NerZvzfdFJoIqsfoaFqFJHTPlMdKLpfSHvVsz+p/GLuHlFPI8xNz6w=="
     private var porcupineManager: PorcupineManager? = null
     private var notificationPlayer: MediaPlayer? = null
 
